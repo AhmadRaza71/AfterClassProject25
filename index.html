@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random number generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        #output {
+            font-size: 18px;
+            color: #333;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎲 Random Number Generator</h1>
+    <button onclick="generateNumbers()">Generate Numbers</button>
+    <div id="output"></div>
+    <script>
+        function generateNumbers() {
+            let count = 0;
+            let output = '';
+            while (count < 11) {
+                let num = Math.floor(Math.random() * 100) + 1;
+                output += `#${count + 1}: ${num}\n`;
+                count++;
+            }
+            document.getElementById('output').textContent = output;
+        }
+    </script>
+</body>
+
+</html>
